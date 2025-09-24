@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bibliothèque en Ligne</title>
+
+  <!-- CSS externes -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container my-5 fade-in">
+    <!-- HEADER -->
+    <div class="header-section">
+      <h1><i class="fas fa-book-open" style="color: var(--electric-blue); margin-right: 15px;"></i>Ma Bibliothèque</h1>
+      <p class="subtitle">Organisez et découvrez vos lectures favorites</p>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-bar">
+      <div class="stat-item"><div class="stat-number" id="stat-total">0</div><div class="stat-label">Total</div></div>
+      <div class="stat-item"><div class="stat-number" id="stat-a-lire">0</div><div class="stat-label">À lire</div></div>
+      <div class="stat-item"><div class="stat-number" id="stat-en-cours">0</div><div class="stat-label">En cours</div></div>
+      <div class="stat-item"><div class="stat-number" id="stat-lu">0</div><div class="stat-label">Terminés</div></div>
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="controls-section">
+      <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" id="recherche" class="form-control" placeholder="Rechercher un livre..." />
+      </div>
+      <button id="ouvrir-modal-ajout" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Ajouter un livre
+      </button>
+    </div>
+
+    <!-- COLONNES -->
+    <div class="columns-container">
+      <div>
+        <div class="column-header"><i class="fas fa-bookmark"></i><h3>À lire</h3><span class="column-count" id="count-a-lire">0</span></div>
+        <div id="a-lire" class="book-column"><div class="empty-state"><i class="fas fa-bookmark"></i><p>Aucun livre à lire</p></div></div>
+      </div>
+      <div>
+        <div class="column-header"><i class="fas fa-book-reader"></i><h3>En cours</h3><span class="column-count" id="count-en-cours">0</span></div>
+        <div id="en-cours" class="book-column"><div class="empty-state"><i class="fas fa-book-reader"></i><p>Aucune lecture en cours</p></div></div>
+      </div>
+      <div>
+        <div class="column-header"><i class="fas fa-check-circle"></i><h3>Terminés</h3><span class="column-count" id="count-lu">0</span></div>
+        <div id="lu" class="book-column"><div class="empty-state"><i class="fas fa-check-circle"></i><p>Aucun livre terminé</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALES -->
+  <div id="modal-ajout" class="modal-overlay">
+    <div class="custom-modal-content">
+      <h5><i class="fas fa-plus-circle"></i>Ajouter un nouveau livre</h5>
+      <form id="form-ajout-livre">
+        <div class="row">
+          <div class="col-md-8 mb-3"><label for="titre" class="form-label">Titre *</label><input type="text" class="form-control" id="titre" required></div>
+          <div class="col-md-4 mb-3"><label for="pages" class="form-label">Pages</label><input type="number" class="form-control" id="pages" min="1"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3"><label for="auteur" class="form-label">Auteur *</label><input type="text" class="form-control" id="auteur" required></div>
+          <div class="col-md-6 mb-3"><label for="editeur" class="form-label">Éditeur</label><input type="text" class="form-control" id="editeur"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 mb-3"><label for="sousTitre" class="form-label">Sous-titre</label><input type="text" class="form-control" id="sousTitre"></div>
+          <div class="col-md-4 mb-3"><label for="published" class="form-label">Date de publication</label><input type="date" class="form-control" id="published"></div>
+        </div>
+        <div class="mb-3"><label for="description" class="form-label">Description</label><textarea class="form-control" id="description" rows="4"></textarea></div>
+        <div class="mb-4"><label for="lien" class="form-label">Lien (site officiel)</label><input type="url" class="form-control" id="lien"></div>
+        <div class="text-end">
+          <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Ajouter le livre</button>
+          <button type="button" class="btn btn-secondary" id="fermer-modal-ajout"><i class="fas fa-times"></i> Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal fade" id="livreModal" tabindex="-1" aria-labelledby="livreModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="livreModalLabel"><i class="fas fa-info-circle"></i> Détails du livre</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body" id="contenuModal"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
