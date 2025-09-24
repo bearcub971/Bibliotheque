@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Chargement des données
   try {
-    const resApi = await fetch("https://keligmartin.github.io/api/books.json");
+    const resApi = await fetch("https://bearcub971.github.io/LIvresAPI/livres.json");
     const dataApi = await resApi.json();
     livresApi = dataApi.map((livre) => ({
       ...livre,
