@@ -45,7 +45,6 @@ L’application doit offrir une interface simple et intuitive pour classer les l
 - Rendu obligatoire **avant la veille de la soutenance** sous forme de repo GitHub.  
 - Chaque membre du groupe doit être capable de présenter et expliquer son code.  
 - Tout retard ou absence de travail entraîne une **note de 0**.  
-- En cas de problème de participation, prévenir par mail : `martin.kelig+esgi@gmail.com`.  
 
 ---
 
@@ -82,25 +81,33 @@ npm -v
 🔧 Étapes
 
 Cloner le projet :
+```bash
 
-git clone https://github.com/<TON-USER>/Bibliotheque.git
+git clone https://github.com/bearcub971/Bibliotheque.git
 cd Bibliotheque
 
+```
 
 Installer les dépendances :
+```bash
 
 npm install
+```
 
 
 Lancer le serveur :
+```bash
 
 npm start
+```
 
 
 ou directement :
+```bash
 
 node server.js
 
+```
 
 Ouvrir l’application :
 👉 http://localhost:3000
