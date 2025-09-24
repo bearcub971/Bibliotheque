@@ -1,24 +1,27 @@
 {
-  "name": "projetjavascript-",
+  "name": "bibliotheque",
   "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
+  "description": "Application de gestion de bibliothèque en ligne avec Node.js et Express",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YbrDev-web/ProjetJavascript-.git"
+    "url": "git+https://github.com/bearcub971/Bibliotheque.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["node", "express", "bibliotheque", "livres"],
+  "author": "bearcub971",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/YbrDev-web/ProjetJavascript-/issues"
+    "url": "https://github.com/bearcub971/Bibliotheque/issues"
   },
-  "homepage": "https://github.com/YbrDev-web/ProjetJavascript-#readme",
+  "homepage": "https://github.com/bearcub971/Bibliotheque#readme",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }

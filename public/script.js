@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// JavaScript principal de l'application (repris du code existant avec améliorations UI)
 document.addEventListener("DOMContentLoaded", async () => {
   let livresApi = [];
   let livresLocaux = [];
